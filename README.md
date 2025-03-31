@@ -1,29 +1,36 @@
 # VincentMobile_Database_System
+
+## Background
+
 Vincent Mobile would like to develop a system that allows members to purchase the latest
-mobile phone and tablets online while facilitating the trade-in service offline.
-With the three main actors identified during the analysis phase, the system should consist of 3
-modules for (1) customers and members, (2) administrators and managers, and (3) officers.
-Through the system, administrators maintain the product list, such as introducing new products
-and fading out obsolete products and update inventories when there are stock replenishments.
-A customer registers as a member before making any purchases. After registering as member,
-he/she searches for a list of products available for sale using keywords. After viewing the
-product details, he/she may store desired products into a shopping cart datastore. Specifically,
-the company maintains a shopping cart table which stores the shopping cart items for all
-members. Individual member can view his/her own shopping cart items until they are
-purchased. When a member views the shopping cart, the system should hide the out-of-stock
-products to mitigate the risk of buying unavailable products. However, the shopping cart item
-should be displayed again when the product is replenished.
-A member may make a purchase with multiple products. He/she verifies the products to
-purchase before completing the purchase. Member then enter a credit card number, the card’s
-expiry date and CVC code to proceed. The system should also ensure that only available
-products can be purchased.
-For an order that does not require trade-in services, administrator can process the delivery
-directly. Administrator reviews the list of confirmed orders from the system and informs the
-warehouse to prepare for shipment, while the shipment preparation is not part of the system
-scope. Upon informing the warehouse about the shipment through email or any other means,
-administrator updates the status to “To be delivered”. Administrator then receives notifications
-from the warehouse when the orders are delivered and updates the status of those orders to
-“Completed”.
+mobile phones and tablets online while facilitating the offline trade-in service.
+
+With the three main actors identified during the analysis phase, the system consists of 3
+modules for:
+1. customers and members
+2. administrators and managers
+3. officers
+
+## Key functions
+
+_Administrator_
+- Maintain the product list, including introducing new products, fading out obsolete products, and updating inventories when there is stock replenishment.
+- Reviews the list of confirmed orders from the system
+
+_Customer_
+- Register as a member before making any purchases
+- Search for a list of products available for sale using keywords.
+- View product details, and store desired products in a shopping cart datastore.
+  
+  Specifically, the company maintains a shopping cart table that stores the shopping cart items for all members. Individual members can view their shopping cart items until they are purchased. When a member views the shopping cart, the system should hide the out-of-stock products to mitigate the risk of buying unavailable products. However, the shopping cart item should be displayed again when the product is replenished.
+
+- Purchase with multiple products
+- Verify products to purchase before completing the purchase.
+- Proceed Payment: Enter a credit card number, the card’s expiry date, and CVC code to proceed.
+
+_Additional Requirements_
+1. The system should also ensure that only available products can be purchased. For an order that does not require trade-in services, the administrator can process the delivery directly.
+2. Upon informing the warehouse about the shipment through email or any other means, the administrator updates the status to “To be delivered”. The administrator then receives notifications from the warehouse when the orders are delivered and updates the status of those orders to “Completed”.
 While member indicates old devices information for trade-in while making the purchase online,
 he/she brings in the old devices to officer at the customer service point in person. Officer
 retrieves the trade-in details from the system, inspects the device and give a trade-in offer.
