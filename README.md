@@ -15,7 +15,13 @@ modules for:
 
 _Administrator_
 - Maintain the product list, including introducing new products, fading out obsolete products, and updating inventories when there is stock replenishment.
-- Reviews the list of confirmed orders from the system
+- Review the list of confirmed orders from the system
+- Update delivery status (to “To be delivered”, or "Completed")
+- Generate numerous operational and managerial reports to facilitate the company’s operations and development
+
+_Officer_
+- Update the information on the traded-in devices in the database
+- Update customers' trade-in decisions in the database
 
 _Customer_
 - Register as a member before making any purchases
@@ -30,18 +36,7 @@ _Customer_
 
 _Additional Requirements_
 1. The system should also ensure that only available products can be purchased. For an order that does not require trade-in services, the administrator can process the delivery directly.
-2. Upon informing the warehouse about the shipment through email or any other means, the administrator updates the status to “To be delivered”. The administrator then receives notifications from the warehouse when the orders are delivered and updates the status of those orders to “Completed”.
-While member indicates old devices information for trade-in while making the purchase online,
-he/she brings in the old devices to officer at the customer service point in person. Officer
-retrieves the trade-in details from the system, inspects the device and give a trade-in offer.
-Spring 2024-2025
-Page 2 of 5
-When member agrees with the trade-in offer, the order price will be adjusted according to the
-agreed trade-in offer and before proceeding with the order shipment. Officer also updates the
-information of the traded-in devices in the database.
-However, when member rejects the trade-in offer, he/she has an option to proceed with the
-order shipment as if no trade-in involved, or simply to cancel the order. Officer executes the
-decision for the customer through the system. Member can trade in many old devices in one
-order. However, the trade-in discount provided must not exceed the order amount.
-Manager, a role done by the same group of administrators, generates numerous operational and
-managerial reports to facilitate the company’s operations and development
+2. While a member indicates old device information for trade-in while making the purchase online, he/she brings in the old devices to the officer at the customer service point in person. The officer retrieves the trade-in details from the system, inspects the device, and gives a trade-in offer.
+3. When a member agrees with the trade-in offer, the order price will be adjusted according to the agreed trade-in offer before proceeding with the order shipment. However, when a member rejects the trade-in offer, he/she has the option to proceed with the order shipment as if no trade-in is involved, or simply to cancel the order.
+4. Members can trade in many old devices in one order. However, the trade-in discount provided must not exceed the order amount.
+
