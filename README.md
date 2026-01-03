@@ -1,42 +1,120 @@
-# VincentMobile_Database_System
+# VincentMobile Database System
 
-## Background
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Sharon-Tseng/VincentMobile_Database_System)
 
-Vincent Mobile would like to develop a system that allows members to purchase the latest
-mobile phones and tablets online while facilitating the offline trade-in service.
+A comprehensive interactive database management system for Vincent Mobile, an online mobile phone and tablet retail platform with integrated trade-in services.
 
-With the three main actors identified during the analysis phase, the system consists of 3
-modules for:
-1. customers and members
-2. administrators and managers
-3. officers
+## 📋 Overview
 
-## Key functions
+Vincent Mobile aims to develop a system that allows members to purchase the latest mobile phones and tablets online while facilitating offline trade-in services. This repository contains Jupyter notebooks implementing the database-backed application interfaces for different user roles.
 
-_Administrator_
-- Maintain the product list, including introducing new products, fading out obsolete products, and updating inventories when there is stock replenishment.
-- Review the list of confirmed orders from the system
-- Update delivery status (to “To be delivered”, or "Completed")
-- Generate numerous operational and managerial reports to facilitate the company’s operations and development
+## 🏗️ System Architecture
 
-_Officer_
-- Update the information on the traded-in devices in the database
-- Update customers' trade-in decisions in the database
+The system consists of **3 main modules** supporting different actors:
 
-_Customer_
-- Register as a member before making any purchases
-- Search for a list of products available for sale using keywords.
-- View product details, and store desired products in a shopping cart datastore.
-  
-  Specifically, the company maintains a shopping cart table that stores the shopping cart items for all members. Individual members can view their shopping cart items until they are purchased. When a member views the shopping cart, the system should hide the out-of-stock products to mitigate the risk of buying unavailable products. However, the shopping cart item should be displayed again when the product is replenished.
+1. **Customers and Members** - Online shopping and trade-in services
+2. **Administrators and Managers** - Product and order management, reporting
+3. **Officers** - Trade-in processing and customer service
 
-- Purchase with multiple products
-- Verify products to purchase before completing the purchase.
-- Proceed Payment: Enter a credit card number, the card’s expiry date, and CVC code to proceed.
+## 📓 Notebooks
 
-_Additional Requirements_
-1. The system should also ensure that only available products can be purchased. For an order that does not require trade-in services, the administrator can process the delivery directly.
-2. While a member indicates old device information for trade-in while making the purchase online, he/she brings in the old devices to the officer at the customer service point in person. The officer retrieves the trade-in details from the system, inspects the device, and gives a trade-in offer.
-3. When a member agrees with the trade-in offer, the order price will be adjusted according to the agreed trade-in offer before proceeding with the order shipment. However, when a member rejects the trade-in offer, he/she has the option to proceed with the order shipment as if no trade-in is involved, or simply to cancel the order.
-4. Members can trade in many old devices in one order. However, the trade-in discount provided must not exceed the order amount.
+### Main Notebooks
+
+- **[Customer_and_Member_Final_OpFeature_Merged.ipynb](Customer_and_Member_Final_OpFeature_Merged.ipynb)** - Complete customer and member module with operational features
+- **[Admin_officer_merged.ipynb](Admin_officer_merged.ipynb)** - Merged administrator and officer module implementation
+- **[m3m4_v_ST.ipynb](m3m4_v_ST.ipynb)** - Administrator/Manager and Officer modules implementation (older version)
+- **[Customer_and_Member_final.ipynb](Customer_and_Member_final.ipynb)** - Customer and member module (older version)
+
+## 🎯 Key Features
+
+### Administrator Functions
+- Maintain product catalog (add new products, fade out obsolete items)
+- Manage inventory with stock replenishment updates
+- Review and process confirmed orders
+- Update delivery status ("To be delivered", "Completed")
+- Generate operational and managerial reports
+
+### Officer Functions
+- Record trade-in device information in the database
+- Process customer trade-in decisions
+- Inspect devices and provide trade-in offers
+- Update order pricing based on trade-in agreements
+
+### Customer/Member Functions
+- **Account Management**: Register as a member before making purchases
+- **Product Discovery**: Search products using keywords
+- **Shopping Cart**: Store desired products with intelligent out-of-stock handling
+- **Order Management**: Purchase multiple products in a single transaction
+- **Payment Processing**: Complete orders with credit card information
+- **Trade-in Service**: Submit old device information for trade-in evaluation
+
+## 🔧 Technical Stack
+
+- **Database**: Oracle Database (cx_Oracle)
+- **Interface**: Google Colab / Jupyter Notebook
+- **Libraries**: 
+  - `cx_Oracle` - Oracle database connectivity
+  - `pandas` - Data manipulation
+  - `ipywidgets` - Interactive UI components
+  - `google.colab.widgets` - TabBar for module navigation
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Access to Oracle Database (HKUST imz409 server)
+- Google Colab or Jupyter Notebook environment
+
+### Setup
+
+1. Open any notebook in Google Colab or Jupyter
+2. Run the Oracle Instant Client installation cells
+3. Configure database connection with credentials:
+   ```python
+   HOST_NAME = "imz409.ust.hk"
+   PORT_NUMBER = "1521"
+   SERVICE_NAME = "imz409"
+   USERNAME = "your_username"
+   PASSWORD = "your_password"
+   ```
+
+### Running the Application
+
+1. Open the desired module notebook
+2. Execute cells sequentially
+3. Interact with the widget-based interface
+
+## 📦 Business Logic
+
+### Shopping Cart Behavior
+- Cart items persist across sessions until purchased
+- Out-of-stock products are automatically hidden during checkout
+- Items reappear when products are restocked
+
+### Trade-in Process
+1. Member submits device information online during purchase
+2. Member brings device to customer service point
+3. Officer inspects device and provides trade-in offer
+4. Member can:
+   - Accept offer → Order price adjusted, proceeds to shipment
+   - Reject offer → Continue without trade-in OR cancel order
+5. Trade-in discount cannot exceed order total amount
+
+### Order Processing Rules
+- Only in-stock products can be purchased
+- Orders without trade-in: Direct processing by administrator
+- Orders with trade-in: Requires officer approval before shipment
+- Multiple devices can be traded in per order
+
+## 🎓 Project Context
+
+This project was developed as part of the ISOM3260/3760 course at HKUST (Hong Kong University of Science and Technology).
+
+## 📝 License
+
+This project is for educational purposes as part of coursework at HKUST.
+
+---
+
+**Note**: Database credentials shown in notebooks are for demonstration purposes. Update with your own credentials before running.
 
